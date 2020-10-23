@@ -1,212 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>homepage</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-  </head>
+  <title>All</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Poppins"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
-    .h1 {
-      font-family: "Kanit", sans-serif;
-      text-shadow: 2px 2px #747c00;
+    #cover {
+      background: url("https://images.wallpapersden.com/image/download/minimal-mojave_64927_5120x2880.jpg");
+      background-size: cover;
+      height: 100%;
+      text-align: center;
     }
-    .h18 {
-      font-family: "Kanit", sans-serif;
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Poppins", sans-serif;
     }
-    .card-header {
-      background-color: rgb(44, 44, 44);
+    body {
+      font-size: 16px;
+    }
+    .w3-half img {
+      margin-bottom: -6px;
+      margin-top: 16px;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+    .w3-half img:hover {
+      opacity: 1;
+    }
+    table {
+      border: 2px solid;
+    }
+    .tt {
       color: white;
     }
+    .txtcolor {
+      background: #21313c;
+    }
   </style>
-  <body class="">
-    <!-- <div
-      class=""
-      style="
-        background: url('https://www.rmutp.ac.th/web2561/wp-content/uploads/2018/06/sci_buiding.jpg');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 45vh; "
-    > -->
-    <!--      <div class="container">
-        <div class="row">
-          <div class="offset-xl-1 col-xl-10 col-md-12 col-12 p-5">
-            <div class="py-13 pt-lg-16 pb-lg-14 text-center text-light p-5">
-              <h1 class="display-3 font-weight-bold text-light mb-4 mt-5 h1">
-                Welcome
-              </h1>
-              
-            </div>
-          </div>
+  <body>
+    <!-- Sidebar/menu -->
+    <section id="cover" class="min-vh-100">
+      <nav
+        class="w3-sidebar txtcolor w3-collapse w3-top w3-large w3-padding"
+        style="z-index: 3; width: 300px; font-weight: bold"
+        id="mySidebar"
+      >
+        <% include layout %>
+        <div class="w3-container">
+          <h3 class="w3-padding-64">
+            <b class="tt">Report</b>
+          </h3>
         </div>
-      </div> -->
-    <% include layout %>
-    <div class="container">
-      <div class="container-fluid p-5">
-        <div class="row content">
-          <div class="col-sm-3 sidenav">
-            <table class="table table-bordered rounded">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">report</th>
-                </tr>
-              </thead>
+        <div class="w3-bar-block">
+          <a href="/all" class="w3-bar-item w3-button w3-hover-white tt">All</a>
+          <a href="/Quatation" class="w3-bar-item w3-button w3-hover-white tt"
+            >Quatation</a
+          >
+          <a
+            href="/PurchaseOrder"
+            class="w3-bar-item w3-button w3-hover-white tt"
+            >PurchaseOrder</a
+          >
+          <a href="Receipt" class="w3-bar-item w3-button w3-hover-white tt"
+            >Receipt</a
+          >
+          <a href="/Invoice" class="w3-bar-item w3-button w3-hover-white tt"
+            >invoice</a
+          >
+        </div>
+      </nav>
 
-              <tbody>
-                <tr>
-                  <td><a href="/Quatation">Quatation</a></td>
-                </tr>
-                <tr>
-                  <td><a href="/PurchaseOrder">PurchaseOrder</a></td>
-                </tr>
-                <tr>
-                  <td><a href="/Recepipt">Receipt</a></td>
-                </tr>
-                <tr>
-                  <td><a href="/Invoice">Invoice</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-sm-9">
-            <h3>Welcome</h3>
-            <iframe
-              style="background: #ffffff; border: none; border-radius: 2px"
-              width="800"
-              height="480"
-              src="https://charts.mongodb.com/charts-project-0-dpnhp/embed/charts?id=bcdd7c1e-94fd-4f0b-aa25-c3c8f4a6577f&autoRefresh=10&theme=light"
-            ></iframe>
-          </div>
+      <!-- Top menu on small screens -->
+      <header
+        class="w3-container w3-top w3-hide-large txtcolor w3-xlarge w3-padding"
+      >
+        <a
+          href="javascript:void(0)"
+          class="w3-button txtcolor w3-margin-right"
+          onclick="w3_open()"
+          >☰</a
+        >
+        <span>Company Name</span>
+      </header>
+
+      <!-- Overlay effect when opening sidebar on small screens -->
+      <div
+        class="w3-overlay w3-hide-large"
+        onclick="w3_close()"
+        style="cursor: pointer"
+        title="close side menu"
+        id="myOverlay"
+      ></div>
+
+      <!-- !PAGE CONTENT! -->
+      <div class="w3-main" style="margin-left: 340px; margin-right: 40px">
+        <div class="container py-5">
+          <h1 class="tt p-3">Welcome</h1>
+          <iframe
+            style="
+              background: #21313c;
+              border: none;
+              border-radius: 2px;
+              box-shadow: 0 2px 10px 0 rgba(70, 76, 79, 0.2);
+            "
+            width="900"
+            height="750"
+            src="https://charts.mongodb.com/charts-project-0-dpnhp/embed/charts?id=bcdd7c1e-94fd-4f0b-aa25-c3c8f4a6577f&autoRefresh=true&maxDataAge=30&theme=dark"
+          ></iframe>
         </div>
       </div>
-    </div>
-    <!-- <div class="container">
-      <div class="row"> -->
-    <!-- Blog Entries Column -->
-    <!--  <div class="col-md-8">
-          <div class="row">
-            <div class="col-md-4">
-              <h1 class="my-4 h18">
-            ข่าวสาร
-          </h1></div>
-          <div class="col-md-8">
-            <div class="card-body mt-2">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">&nbsp;
-                  <button class="btn btn-secondary" type="button">Go!</button>
-                </span>
-              </div>
-            </div>
-         </div>
-        </div> -->
-    <!-- Blog Post -->
-    <!--  <div class="card mb-4">
-            <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-            <div class="card-body">
-              <h2 class="card-title">Post Title</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-              <a href="#" class="btn btn-primary">Read More →</a>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on January 1, 2017 by
-              <a href="#">Start Bootstrap</a>
-            </div>
-          </div> -->
+    </section>
+    <script>
+      // Script to open and close sidebar
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
 
-    <!-- Pagination -->
-    <!--  <ul class="pagination justify-content-center mb-4">
-            <li class="page-item">
-              <a class="page-link" href="#">← Older</a>
-            </li>
-            <li class="page-item disabled">
-              <a class="page-link" href="#">Newer →</a>
-            </li>
-          </ul>
-        </div> -->
-    <!-- Sidebar Widgets Column -->
-    <!--  <div class="col-md-4">
-          <% if(users) {%>
-          <div class="card my-4 h18">
-            <h5 class="card-header">Profile</h5>
-            <div class="card-body">
-                <h6>Name :<%= users.name %> </h6>
-                <h6>email :<%= users.email %> </h6>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <ul class="list-unstyled mb-0">
-                      <li>
-                        <a href="/addblog">Addblog</a>
-                      </li>
-                      <li>
-                        <a href="/Myblog">Myblog</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
-          </div>  
-          <% } %> -->
-    <!-- Search Widget -->
-    <!-- <div class="card my-4 h18">
-            <h5 class="card-header">Search</h5>
-            <div class="card-body">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
-                </span>
-              </div>
-            </div>
-          </div> -->
-    <!-- Categories Widget -->
-    <!--  <div class="card my-4 h18">
-            <h5 class="card-header">Categories</h5>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">ข่าวสาร</a>
-                    </li>
-                    <li>
-                      <a href="#">งานวิจัย</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Side Widget -->
-    <!--  <div class="card my-4 h18">
-            <h5 class="card-header">Side Widget</h5>
-            <div class="card-body">
-              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-            </div>
-          </div>
-  
-        </div>
-    
-      </div> -->
-    <!-- /.row -->
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+      }
 
-    <!-- </div> -->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      // Modal Image Gallery
+      function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+      }
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

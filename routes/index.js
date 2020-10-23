@@ -27,7 +27,7 @@ router.get("/Quatation", enSureAuthenticated, function (req, res, next) {
     if (err) throw err;
     var dbo = db.db("email");
     /*Return only the documents with the address "Park Lane 38":*/
-    var query = { subject: "Fwd: ขายสินค้า" };
+    var query = { subject: "ขายสินค้า" };
     dbo
       .collection("data")
       .find(query)
@@ -44,7 +44,7 @@ router.get("/PurchaseOrder", enSureAuthenticated, function (req, res, next) {
     if (err) throw err;
     var dbo = db.db("email");
     /*Return only the documents with the address "Park Lane 38":*/
-    var query = { subject: "Fwd: สั่งซื้อสินค้า" };
+    var query = { subject: "สั่งซื้อสินค้า" };
     dbo
       .collection("data")
       .find(query)
@@ -61,7 +61,7 @@ router.get("/Receipt", enSureAuthenticated, function (req, res, next) {
     if (err) throw err;
     var dbo = db.db("email");
     /*Return only the documents with the address "Park Lane 38":*/
-    var query = { subject: "Fwd: ขายสินค้า" };
+    var query = { subject: "ใบเสร็จ" };
     dbo
       .collection("data")
       .find(query)
@@ -78,7 +78,7 @@ router.get("/Invoice", enSureAuthenticated, function (req, res, next) {
     if (err) throw err;
     var dbo = db.db("email");
     /*Return only the documents with the address "Park Lane 38":*/
-    var query = { subject: "Fwd: ขายสินค้า" };
+    var query = { subject: "ใบแจ้งหนี้" };
     dbo
       .collection("data")
       .find(query)
@@ -95,10 +95,11 @@ router.get("/all", enSureAuthenticated, function (req, res, next) {
     if (err) throw err;
     var dbo = db.db("email");
     /*Return only the documents with the address "Park Lane 38":*/
-   
+    var query1 = { $or: [ { subject: "ขายสินค้า" }, { subject: "ใบแจ้งหนี้" }, { subject: "ใบเสร็จ" }, { subject: "สั่งซื้อสินค้า" } ] }
+
     dbo
       .collection("data")
-      .find()
+      .find(query1)
       .toArray(function (err, result) {
         if (err) throw err;
         console.log(result);
