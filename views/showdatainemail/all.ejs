@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <title>All</title>
+  <link
+    rel="shortcut icon"
+    href="https://image.flaticon.com/icons/png/512/1055/1055644.png"
+    type="image/x-icon"
+  />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -41,47 +46,28 @@
     .w3-half img:hover {
       opacity: 1;
     }
-    .txtcolor{
+    .txtcolor {
       background: #21313c;
     }
-    .a{
-      color:white;
+    .a {
+      color: white;
     }
-  
+    .b {
+      text-align: left;
+    }
+    .c {
+      text-align: center;
+    }
+    .x {
+      font-family: "Kanit", sans-serif;
+      text-align: center;
+      color: white;
+    }
   </style>
   <body>
     <!-- Sidebar/menu -->
     <section id="cover" class="min-vh-100">
-      <nav
-        class="w3-sidebar txtcolor w3-collapse w3-top w3-large w3-padding"
-        style="z-index: 3; width: 300px; font-weight: bold"
-        id="mySidebar"
-      >
-     
-        <% include ../layout %>
-        <div class="w3-container">
-          <h3 class="w3-padding-64 a">
-            <b>Report</b>
-          </h3>
-        </div>
-        <div class="w3-bar-block">
-          <a href="/all" class="w3-bar-item w3-button w3-hover-white a">All</a>
-          <a href="/Quatation" class="w3-bar-item w3-button w3-hover-white a "
-            >Quatation</a
-          >
-          <a href="/PurchaseOrder" class="w3-bar-item w3-button w3-hover-white a "
-            >PurchaseOrder</a
-          >
-          <a href="Receipt" class="w3-bar-item w3-button w3-hover-white a "
-            >Receipt</a
-          >
-          <a href="/Invoice" class="w3-bar-item w3-button w3-hover-white a"
-            >invoice</a
-          >
-        </div>
-        
-      </nav>
-
+      <% include ../nav %>
       <!-- Top menu on small screens -->
       <header
         class="w3-container w3-top w3-hide-large txtcolor w3-xlarge w3-padding"
@@ -92,7 +78,7 @@
           onclick="w3_open()"
           >☰</a
         >
-        <span>Company Name</span>
+        <span class="a">Report</span>
       </header>
 
       <!-- Overlay effect when opening sidebar on small screens -->
@@ -104,29 +90,51 @@
         id="myOverlay"
       ></div>
 
-      <!-- !PAGE CONTENT! -->
       <div class="w3-main" style="margin-left: 340px; margin-right: 40px">
         <div class="container py-5">
-            <table class="table table-borderless bg-light shadow-sm">
-              <tr class="txtcolor a">
-                <th scope="col">Num</th>
-                <th scope="col">Date</th>
-                <th scope="col">From</th>
-                <th scope="col">Subject</th>
-                <th scope="col">Body</th>
+          <h3 class="a  b">Search</h3>
+          <form class="form-group" action="" method="post">
+            <div class="row">
+              <input type="hidden" name="x" value="abc" />
+              <div class="col-8">
+                <select class="form-control form-control-lg" name="date">
+                  <option disabled selected>Choose...</option>
+                  <% datetime.forEach(function(data){ %>
+                  <option value="<%= data %>"><%= data %></option>
+                  <% }) %>
+                </select>
+              </div>
+              <div class="col-4">
+                <button
+                  type="submit"
+                  class="btn btn-secondary btn-lg btn-block"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <table class="table table-borderless bg-light shadow-sm">
+            <tr class="txtcolor a">
+              <th scope="col">Num</th>
+              <th scope="col">Date</th>
+              <th scope="col">From</th>
+              <th scope="col">Subject</th>
+              <th scope="col">Body</th>
+            </tr>
+            <tbody>
+              <% lists.forEach(function(data,i){ %>
+              <tr>
+                <th scope="row"><%= i+1 %></th>
+                <td><%= data.date %></td>
+                <td><%= data.from %></td>
+                <td><%= data.subject %></td>
+                <td class="b"><%= data.body %></td>
               </tr>
-              <tbody>
-                <% lists.forEach(function(data,i){ %>
-                <tr>
-                  <th scope="row"><%= i+1 %></th>
-                  <td><%= data.date %></td>
-                  <td><%= data.from %></td>
-                  <td><%= data.subject %></td>
-                  <td><%= data.body %></td>
-                </tr>
-                <% }) %>
-              </tbody>
-            </table>
+              <% }) %>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
